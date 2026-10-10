@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { SearchBox } from "@mapbox/search-js-react";
-import { Input } from "@/components/ui/Input";
+import { Input } from "@/components/ui/input";
 import { AI_PROMPT, SelectBudgetOptions } from "../constants/options";
 import { SelectTravelesList } from "../constants/options";
 import { Button } from "@/components/ui/button";
