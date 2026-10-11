@@ -21,8 +21,9 @@ import {
 } from "@/components/ui/dialog";
 import { LogIn } from "lucide-react";
 import { FcGoogle } from "react-icons/fc";
-
+// import { useNavigate } from 'react-router-dom';
 function Header() {
+  // const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem("user"));
   const [openDialog, setOpenDialog] = useState(false);
   useEffect(() => {
@@ -94,7 +95,8 @@ function Header() {
                     onClick={() => {
                       googleLogout();
                       localStorage.clear();
-                      window.location.reload();
+                      // window.location.reload();
+                      window.location.href = '/';
                     }}
                   >
                     Logout

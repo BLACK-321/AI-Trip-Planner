@@ -21,6 +21,7 @@ import axios from "axios";
 import { doc, setDoc } from "firebase/firestore";
 import { db } from "../service/firebaseConfig";
 import { useNavigate } from "react-router-dom";
+import Footer from '@/view-trip/components/Footer';
 
 function CreateTrip() {
   const [place, setPlace] = useState(null);
@@ -186,6 +187,7 @@ function CreateTrip() {
     handleInputChange("location", placeData);
   };
   return (
+    <div className="w-full">
     <div className="sm:px-10 md:px-32 lg:px-56 xl:px-72 px-5 mt-10">
       <h2 className="font-bold text-3xl">
         Tell us your travel preferences🏕️🏝️
@@ -297,6 +299,8 @@ function CreateTrip() {
           </Button>
         </DialogContent>
       </Dialog>
+    </div>
+      <Footer/>
     </div>
   );
 }

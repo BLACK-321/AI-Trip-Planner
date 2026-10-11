@@ -3,6 +3,7 @@ import { useNavigate, useNavigation } from "react-router-dom";
 import { collection, getDocs, query, where, deleteDoc, doc } from 'firebase/firestore';
 import { db } from '@/service/firebaseConfig';
 import UserTripCardItem from "./components/UserTripCardItem";
+import Footer from '@/view-trip/components/Footer';
 
 function MyTrips() {
   const navigation = useNavigate();
@@ -49,6 +50,7 @@ function MyTrips() {
   };
 
   return (
+    <div className="w-full">
     <div className="m:px-10 md:px-32 lg:px-56 xl:px-72 px-5 mt-10">
       <h2 className="font-bold text-3xl">My Trips</h2>
       <div className="grid grid-cols-2 mt-10 md:grid-cols-3 gap-5">
@@ -61,6 +63,8 @@ function MyTrips() {
       ))
       }
       </div>
+    </div>
+      <Footer/>
     </div>
   )
 }
