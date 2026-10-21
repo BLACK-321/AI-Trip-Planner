@@ -56,30 +56,30 @@ function Header() {
       });
   };
   return (
-    <div className="p-3 shadow-sm flex justify-between items-center px-5">
-      <img src="/logo.svg" />
+    <div className="p-3 shadow-sm flex justify-between items-center px-3 sm:px-5 md:px-10">
+      <img src="/logo.svg" className="h-7 sm:h-9"/>
       {user ? (
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-1.5 sm:gap-3">
           <a href="/create-trip">
-          <Button variant="outline" className="rounded-full  bg-black text-white font-semibold hover:bg-black hover:text-white hover:scale-110">
+          <Button variant="outline" className="rounded-full bg-black text-white font-semibold hover:bg-black hover:text-white hover:scale-110 px-2.5 py-1 text-xs sm:px-4 sm:py-2 sm:text-sm">
             Create Trips
           </Button>
           </a>
           <a href="/my-trips">
-          <Button variant="outline" className="rounded-full bg-black text-white font-semibold  hover:bg-black hover:text-white hover:scale-110">
+          <Button variant="outline" className="rounded-full bg-black text-white font-semibold hover:bg-black hover:text-white hover:scale-110 px-2.5 py-1 text-xs sm:px-4 sm:py-2 sm:text-sm">
             My Trips
           </Button>
           </a>
 
           {/* Add 'relative' to this wrapper div */}
-          <div className="relative flex items-center gap-3">
+          <div className="relative flex items-center gap-1.5 sm:gap-3">
           <Popover>
             <PopoverTrigger render={<Button variant="outline" />}>
               <img
                 src={user?.picture || user?.picture_url || user?.photoURL}
                 alt={user?.name || "User Profile"}
                 referrerPolicy="no-referrer"
-                className="w-10 h-10 rounded-full object-cover transition-transform duration-300 ease-in-out hover:scale-120"
+                className="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover transition-transform duration-300 ease-in-out hover:scale-105"
                 onError={(e) => {
                   // Fallback if Google image URL expires or fails to load
                   e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(user?.name || "User")}&background=random`;

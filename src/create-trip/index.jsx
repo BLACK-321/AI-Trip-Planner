@@ -188,16 +188,16 @@ function CreateTrip() {
   };
   return (
     <div className="w-full">
-    <div className="sm:px-10 md:px-32 lg:px-56 xl:px-72 px-5 mt-10">
-      <h2 className="font-bold text-3xl">
+    <div className="px-5 sm:px-10 md:px-20 lg:px-36 xl:px-56 mt-6 sm:mt-10">
+      <h2 className="font-bold text-2xl sm:text-3xl">
         Tell us your travel preferences🏕️🏝️
       </h2>
-      <p className="mt-3 text-gray-700 text-xl">
+      <p className="mt-3 text-gray-600 text-sm sm:text-base md:text-lg">
         Just provide some basic information, and our trip planner will generate
         a customized itinerary based on your preferences.
       </p>
 
-      <div className="mt-20 flex flex-col gap-10">
+      <div className="mt-10 sm:mt-16 flex flex-col gap-8 sm:gap-10">
         <div>
           <h2 className="text-xl my-3 font-medium">
             What is destination of choice?
@@ -231,7 +231,7 @@ function CreateTrip() {
       </div>
       <div>
         <h2 className="text-xl my-3 font-medium">What is Your Budget?</h2>
-        <div className="grid grid-cols-3 gap-5 mt-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 mt-5">
           {SelectBudgetOptions.map((item, index) => (
             <div
               key={index}
@@ -252,7 +252,7 @@ function CreateTrip() {
         <h2 className="text-xl my-3 font-medium">
           Who do you plan on traveling with on your next adventure?
         </h2>
-        <div className="grid grid-cols-3 gap-5 mt-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 mt-5">
           {SelectTravelesList.map((item, index) => (
             <div
               key={index}
