@@ -43,7 +43,7 @@ const fetchPlacePhoto = async () => {
       to={'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(place?.placeName || '')}
       target='_blank'
     >
-      <div className='border rounded-xl p-3 sm:p-2 flex flex-col sm:flex-row gap-4 sm:gap-5 ...'>
+      <div className='border-3 border-black rounded-xl p-3 sm:p-2 flex flex-col sm:flex-row gap-4 sm:gap-5 ... hover:scale-105 transition-all cursor-pointer shadow-2xl'>
         <img
           src={photoUrl || "/airplane.jpg"}
           onError={(e) => {
