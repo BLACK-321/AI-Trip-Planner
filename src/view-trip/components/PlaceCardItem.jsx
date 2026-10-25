@@ -43,13 +43,13 @@ const fetchPlacePhoto = async () => {
       to={'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(place?.placeName || '')}
       target='_blank'
     >
-      <div className='border rounded-xl p-2 flex gap-5 hover:scale-105 transition-all cursor-pointer shadow-xl'>
+      <div className='border rounded-xl p-3 sm:p-2 flex flex-col sm:flex-row gap-4 sm:gap-5 ...'>
         <img
           src={photoUrl || "/airplane.jpg"}
           onError={(e) => {
             e.target.src = "https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?auto=format&fit=crop&q=80&w=400";
           }}
-          className='w-32.5 h-32.5 rounded-xl object-cover'
+          className='w-full sm:w-32.5 h-40 sm:h-32.5 rounded-xl object-cover'
           alt={place?.placeName || 'Place'}
         />
         <div>
