@@ -53,7 +53,7 @@ function HotelCardItem({ item }) {
       }
       target="_blank"
     >
-      <div className="border-3 border-black rounded-xl p-2 flex gap-2 hover:scale-105 transition-all cursor-pointer shadow-2xl h-full flex-col w-full">
+      <div className="border-3 border-gray-300 rounded-xl p-2 mr-2 mt-2 flex gap-2 hover:scale-110 transition-all cursor-pointer shadow-2xl h-full flex-col w-full hover:border-4 hover:border-red-600">
         <img
           src={photoUrl || "/airplane.jpg"}
           onError={(e) => {

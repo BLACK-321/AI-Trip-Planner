@@ -30,7 +30,7 @@ function UserTripCardItem({ trip, onDelete }) {
     <div className="relative hover:scale-105 transition-all">
 
     <Link to={'/view-trip/'+trip?.id}>
-    <div className="hover:scale-105 duration-200 ease-in-out transition-all cursor-pointer border-2 p-2 rounded-2xl shadow-xl">
+    <div className="hover:scale-110 duration-200 ease-in-out transition-all cursor-pointer border-3 p-2 m-2 rounded-2xl shadow-2xl border-gray-300 hover:border-4 hover:border-black">
       <img src={photoUrl || "/airplane.jpg"} 
       className="object-cover rounded-xl h-55 w-full" />
 
