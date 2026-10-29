@@ -2,11 +2,12 @@ import React from 'react'
 import HotelCardItem from './HotelCardItem';
 
 function Hotels({ trip }) {
-  // Safely retrieve hotel list whether stored under 'hotels' or 'hotelOptions'
-  const rawData = typeof trip?.tripData === 'string' 
-    ? JSON.parse(trip?.tripData) 
+  
+  const parsedData = typeof trip?.tripData === 'string'
+    ? JSON.parse(trip?.tripData)
     : trip?.tripData;
 
+  const rawData = Array.isArray(parsedData) ? parsedData[0] : parsedData;
   const hotelList = rawData?.hotels || rawData?.hotelOptions;
 
   return (

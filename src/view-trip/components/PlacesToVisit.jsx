@@ -2,10 +2,12 @@ import React from 'react';
 import PlaceCardItem from './PlaceCardItem';
 
 function PlacesToVisit({ trip }) {
-  const rawData = typeof trip?.tripData === 'string' 
-    ? JSON.parse(trip?.tripData) 
+  
+  const parsedData = typeof trip?.tripData === 'string'
+    ? JSON.parse(trip?.tripData)
     : trip?.tripData;
 
+  const rawData = Array.isArray(parsedData) ? parsedData[0] : parsedData;
   const itinerary = rawData?.itinerary;
 
   return (

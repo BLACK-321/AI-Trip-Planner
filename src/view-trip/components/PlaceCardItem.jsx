@@ -15,11 +15,12 @@ function PlaceCardItem({ place }) {
 const fetchPlacePhoto = async () => {
   if (!place?.placeName) return;
 
-  // 1. Strip special characters
+  // 1. Strip parentheses, split by common conjunctions/separators, and take the first part
   const cleanName = place.placeName
-    .replace(/\(.*?\)/g, '')
-    .replace(/[&/\\#,+()$~%.'":*?<>{}]/g, ' ')
-    .replace(/\s+/g, ' ')
+    .replace(/\(.*\)/g, '')      // Remove parentheses like "(The Golden Pavilion)"
+    .split(/&|\band\b|\/|-/i)[0] // Split at '&', 'and', '/', or '-' and take the first part
+    .replace(/[\\#,+()$~%.'":*?<>{}]/g, ' ')    // Clean up symbols
+    .replace(/\s+/g, ' ')                       // Normalize spaces
     .trim();
 
   try {
