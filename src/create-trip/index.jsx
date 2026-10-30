@@ -104,7 +104,7 @@ function CreateTrip() {
     setLoading(false);
     SaveAiTrip(result.response.text());
   };
-
+  
   const SaveAiTrip = async (TripData) => {
     // Add a new document in collection "cities"
     setLoading(true);
@@ -120,47 +120,6 @@ function CreateTrip() {
     navigate("/view-trip/" + docId);
   };
 
-  // const getUserProfile = (tokenInfo) => {
-  //   axios
-  //     .get(
-  //       `https://www.googleapis.com/oauth2/v1/userinfo?access_token=${tokenInfo?.access_token}`,
-  //       {
-  //         headers: {
-  //           Authorization: `Bearer ${tokenInfo?.access_token}`,
-  //           Accept: "Application/json",
-  //         },
-  //       },
-  //     )
-  //     .then((resp) => {
-  //       console.log(resp.data);
-  //     });
-  // };
-  // Triggered when the user clicks a location from the Mapbox dropdown
-  // const handleRetrieve = (res) => {
-  //   const selectedFeature = res.features[0];
-
-  //   // Constructing the exact payload structured similarly to Google Places output
-  //   const placeData = {
-  //     label:
-  //       selectedFeature.properties.full_address ||
-  //       selectedFeature.properties.name,
-  //     value: {
-  //       description: selectedFeature.properties.full_address,
-  //       place_id: selectedFeature.properties.mapbox_id,
-  //       coordinates: {
-  //         lng: selectedFeature.geometry.coordinates[0],
-  //         lat: selectedFeature.geometry.coordinates[1],
-  //       },
-  //       raw: selectedFeature, // Contains context like city, region, country, postal code
-  //     },
-  //   };
-
-  //   setPlace(placeData);
-
-  //   // Check your DevTools console to see the formatted output
-  //   console.log("Formatted Place State:", placeData);
-  //   const [formData, setFormData] = useState([]);
-  //   const handleInputChange = (name, value) => {};
   const handleRetrieve = (res) => {
     const selectedFeature = res.features[0];
 

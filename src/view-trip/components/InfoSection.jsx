@@ -14,7 +14,7 @@ function InfoSection({ trip }) {
   }, [trip]);
 
   const fetchPhoto = async () => {
-    const locationName = trip?.userSelection?.location?.label;
+    const locationName = trip?.userSelection?.location?.label?.split(',')[0];
     if (!locationName) return;
 
     try {

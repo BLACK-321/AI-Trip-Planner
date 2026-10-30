@@ -13,7 +13,7 @@ function UserTripCardItem({ trip, onDelete }) {
       }, [trip]);
     
       const fetchPhoto = async () => {
-        const locationName = trip?.userSelection?.location?.label;
+        const locationName = trip?.userSelection?.location?.label?.split(',')[0];
         if (!locationName) return;
     
         try {
@@ -31,7 +31,7 @@ function UserTripCardItem({ trip, onDelete }) {
 
     <Link to={'/view-trip/'+trip?.id}>
     <div className="hover:scale-110 duration-200 ease-in-out transition-all cursor-pointer border-3 p-2 m-2 rounded-2xl shadow-2xl border-gray-300 hover:border-4 hover:border-red-600">
-      <img src={photoUrl || "/airplane.jpg"} 
+      <img src={photoUrl || "/airplane.jpg"}
       className="object-cover rounded-xl h-55 w-full" />
 
       {/* Delete Button with React Icon */}
